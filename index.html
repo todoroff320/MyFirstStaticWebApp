@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+     <head>
+		<script>
+ 
+			function loadData()
+			{
+				id = document.getElementById("userId").value;
+				fetch('https://reqres.in/api/users/'+id)
+					.then((response) => response.json())
+					.then((data) => document.getElementById("res").innerText="user	: "+data.data.first_name);
+			}
+ 
+		</script>
+     </head>
+ 
+     <body>
+         <h1>My Web Site</h1>
+		 <hr>
+		  User id <input type="text" id="userId">
+		 <button  onclick="loadData()">Зареди</button>
+		 <div id="res"></div>
+     </body>
+</html>
